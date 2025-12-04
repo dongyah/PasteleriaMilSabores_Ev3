@@ -1,5 +1,7 @@
 package com.example.backend.BackEnd.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.backend.BackEnd.model.Usuario;
@@ -10,13 +12,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 
 @RestController
-@RequestMapping("/api/Usuarios")
+@RequestMapping("/api/usuarios")
+@CrossOrigin(origins = "http://localhost:5173")
 public class UsuarioController {
     
     @Autowired

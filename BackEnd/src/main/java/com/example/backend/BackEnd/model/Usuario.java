@@ -23,9 +23,9 @@ public class Usuario {
     private String nombre;
     private String apellidos;
     private LocalDate fechaNac;
-    private Integer rut;
+    private String rut;
     private String correo;
-    private Integer telefono;
+    private String telefono;
     private String region;
     private String comuna;
     private String direccion;
