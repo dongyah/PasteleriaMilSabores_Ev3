@@ -1,7 +1,5 @@
 package com.example.backend.BackEnd.controller;
 
-import org.springframework.web.bind.annotation.RestController;
-
 import com.example.backend.BackEnd.model.Categoria;
 import com.example.backend.BackEnd.repository.CategoriaRepository;
 import com.example.backend.BackEnd.service.CategoriaService;
@@ -16,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api/Categorias")
+@RequestMapping("/api/v1/categorias")
 public class CategoriaController {
     
     @Autowired
@@ -52,6 +50,14 @@ public class CategoriaController {
             Categoria CategoriaUpdate = CategoriaRepository.save(existeCategoria);
             return CategoriaUpdate;
         });
+    }
+
+    @GetMapping("/search") 
+    public ResponseEntity<Categoria> getByNombrePath(@RequestParam String nombre) {
+        
+        Optional<Categoria> categoria = CategoriaRepository.findByNombre(nombre);
+        
+        return categoria.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
     
 }

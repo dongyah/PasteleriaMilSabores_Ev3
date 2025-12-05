@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping("/api/productos")
+@RequestMapping("/api/v1/productos")
 public class ProductoController {
     
     @Autowired
@@ -60,6 +60,8 @@ public class ProductoController {
             return productoUpdate;
         });
     }
+
+    
     
 }
 
