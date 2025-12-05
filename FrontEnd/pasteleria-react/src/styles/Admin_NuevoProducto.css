@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Pacifico&display=swap');
+
+
+.fila-formulario {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#txtDescripcion,
+.fila-formulario textarea#txtDescripcion {
+  width: 100% !important;
+  max-width: 100%;
+  box-sizing: border-box;
+  display: block;
+  min-height: 110px;
+  resize: vertical;
+}
+
+.formulario-usuario {
+  overflow-x: hidden;
+}
+
+@media (max-width: 700px) {
+  .fila-formulario {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.formulario-usuario textarea {
+  width: 100%;
+  min-height: 100px;
+  resize: none;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  font-size: 1.08rem;
+  font-family: 'Lato', sans-serif;
+  background: #fff;
+  color: #5D4037;
+  padding: 12px 14px;
+  outline: none;
+  transition: border 0.2s;
+  margin-bottom: 0;
+}
+
+.formulario-usuario textarea:focus {
+  border: 1.5px solid #ffc0cb;
+}
+
+.formulario-usuario .grupo-archivo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.formulario-usuario .grupo-archivo input[type="file"] {
+  display: none;
+}
+
+.formulario-usuario .grupo-archivo input[type="text"] {
+  background: #fff;
+  color: #bbb;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 1.08rem;
+  font-family: 'Lato', sans-serif;
+  flex: 1;
+}
+
+.formulario-usuario .grupo-archivo button {
+  background: #aaa;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 18px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.formulario-usuario .grupo-archivo button:hover {
+  background: #888;
+}
+
+.imagen-input-group {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.imagen-label {
+    flex: 1;
+    display: flex;
+}
+
+.input-file {
+    display: none;
+}
+
+.input-text-imagen {
+    width: 100%;
+    background: #fff;
+    color: #bbb;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 1.08rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.btn-examinar {
+    background: #aaa;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 18px;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-examinar:hover {
+    background: #888;
+}
+
+@media (max-width: 900px) {
+  .titulo-admin {
+    font-size: 2rem;
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .titulo-admin {
+    font-size: 1.3rem;
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .acciones-formulario {
+    justify-content: center;
+  }
+  .btn-guardar {
+    margin-bottom: 24px;
+  }
+}

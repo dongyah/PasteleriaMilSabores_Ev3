@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Pacifico&display=swap');
+
+/* ================================================= */
+/* 1. RESET Y ESTILOS GLOBALES */
+/* ================================================= */
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root, main {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Estilos de Tipografía y Fondo */
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #FFF5E1; 
+    color: #5D4037; 
+    line-height: 1.6;
+    padding: 0; 
+    margin: 0;
+    overflow-x: hidden; 
+    text-align: center; /* Centrado general */
+    min-height: 100vh;
+}
+
+h1, h2, h3, .title {
+    font-family: 'Pacifico', cursive;
+    color: #5D4037;
+    text-align: center;
+    
+}
+
+/* ================================================= */
+/* 2. ESTILOS DEL HEADER */
+/* ================================================= */
+
+header {
+    background-color: #FFC0CB;
+    margin: 20px auto 20px auto; 
+    max-width: 1200px; 
+    border-radius: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0; 
+    display: flex;
+    justify-content: center;
+    text-align: left; 
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px; 
+    width: 100%;
+    max-width: 1200px;
+}
+
+.top-bar > div:first-child,
+header .logo { 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-bar span { 
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2em;
+    color: #5D4037;
+    white-space: nowrap;
+}
+
+header img,
+.top-bar img {
+    width: 40px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a, 
+.acciones a {
+    text-decoration: none;
+    color: #5D4037;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    white-space: nowrap; 
+}
+
+nav a:hover, 
+.acciones a:hover {
+    color: #8B4513; 
+}
+
+.acciones {
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.menu-toggle {
+    display: none; 
+}
+
+/* ================================================= */
+/* 3. HOME: SECCIONES, PRODUCTOS Y GENERALES */
+/* ================================================= */
+
+.container {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; 
+    box-sizing: border-box;
+}
+
+.box, .login-box, .register-box, .contact-box {
+    background: #FFC0CB;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    flex: 1 1 40%; 
+    max-width: 600px;
+    margin: 20px auto; 
+    text-align: left;
+}
+
+.box img {
+    width: 90%; 
+    height: auto;
+    max-width: 100%; 
+    border-radius: 10px;
+    margin: 0 auto 10px auto;
+    display: block;
+}
+
+/* Productos (Grid) */
+.productos, .blog-container, .similar-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; 
+    margin: 0 auto;
+    text-align: center;
+}
+
+.card, .blog-card, .similar-card {
+    background: #FFC0CB; 
+    border-radius: 20px; 
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos de imágenes de Tarjeta de Producto (Home) */
+.card img {
+    width: 120px; 
+    height: 120px; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto 10px auto;
+    border-radius: 10px;
+}
+
+.blog-card img, 
+.similar-card img {
+    width: 120px; 
+    height: 120px; 
+    object-fit: cover; 
+    display: block; 
+    margin: 0 auto 10px auto;
+    border-radius: 10px;
+}
+
+.card h3, .blog-card h3, .similar-card h3 {
+    min-height: 40px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.precio {
+    color: #8B4513;
+    font-weight: 700;
+}
+
+/* Botones y Links Comunes */
+button, .btn {
+    background: #8B4513; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .btn:hover {
+    background: #5D4037; 
+}
+
+/* ================================================= */
+/* 4. ESTILOS ESPECÍFICOS DE LAS VISTAS */
+/* ================================================= */
+
+/* Contenedor para centrar el formulario en la página */
+.overlay, .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+    min-height: 80vh;
+}
+
+/* Tarjeta principal del formulario */
+.recuadro, .contacto-container {
+    background: #FFC0CB;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
+    text-align: center;
+}
+
+/* Título y subtítulo */
+.presentacion h1 {
+    font-family: 'Pacifico', cursive;
+    color: #5D4037;
+    margin-bottom: 0.5rem;
+}
+.presentacion p {
+    color: #683409;
+    margin-bottom: 1.5rem;
+}
+.presentacion a {
+    color: #683409;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
+/* Formulario y sus elementos */
+.form-registro,
+.form-inis,
+.form-contacto,
+#form-contacto {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 1rem;
+}
+
+/* Estilos de etiquetas (labels) */
+.form-registro label,
+.form-inis label,
+.form-contacto label,
+#form-contacto label,
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #683409;
+}
+
+.recuadro input[type="text"],
+.recuadro input[type="email"],
+.recuadro input[type="password"],
+.recuadro input[type="number"],
+.recuadro select,
+.recuadro textarea,
+.contacto-container input[type="text"],
+.contacto-container input[type="email"],
+.contacto-container textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #f0b6c2;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+    color: #683409;
+    background-color: #fff;
+    outline: none;
+    transition: border 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+}
+
+.recuadro textarea,
+.contacto-container textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.recuadro input::placeholder,
+.recuadro textarea::placeholder,
+.contacto-container input::placeholder,
+.contacto-container textarea::placeholder {
+    color: #b3a298;
+}
+
+.recuadro input:focus,
+.recuadro textarea:focus,
+.contacto-container input:focus,
+.contacto-container textarea:focus {
+    border-color: #ffc0cb;
+    box-shadow: 0 0 0 3px rgba(255, 192, 203, 0.5);
+}
+
+.form-registro button[type="submit"],
+.form-inis button[type="submit"],
+.form-contacto button[type="submit"],
+#form-contacto button[type="submit"],
+.btn-registro {
+    background: #683409;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.form-registro button[type="submit"]:hover,
+.form-inis button[type="submit"]:hover,
+.form-contacto button[type="submit"]:hover,
+#form-contacto button[type="submit"]:hover,
+.btn-registro:hover {
+    background: #8b5e34;
+    transform: translateY(-2px);
+}
+
+/* Mensaje de error */
+.alert-error {
+    color: #D32F2F;
+    background-color: #FFCDD2;
+    border: 1px solid #D32F2F;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Pie del formulario (link a login) */
+.form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+.form-footer a {
+    color: #683409;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.footer {
+  background-color: #683409; 
+  color: #fff5e1; 
+  text-align: center;
+  padding: 10px 0; 
+  font-size: 0.85rem; 
+  margin-top: 40px; 
+  width: 100%; 
+}
+
+.footer p {
+    margin: 0; 
+}
+
+
+/* ================================================= */
+/* 5. NUEVA SECCIÓN: PÁGINA DE PRODUCTO DETALLADO */
+/* ================================================= */
+
+.product-page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.product-page img {
+  width: 450px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.product-info h2 {
+  font-family: 'Pacifico', cursive;
+  color: #5D4037;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.product-info .precio {
+  font-size: 1.4rem;
+  color: #8B4513;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.product-info input[type="number"] {
+  width: 70px;
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #f0b6c2;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.product-info button {
+  width: fit-content;
+  background-color: #8B4513;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.product-info button:hover {
+  background-color: #5D4037;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+  .product-page {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .product-info {
+    text-align: center;
+  }
+}
+
+
+/* ================================================= */
+/* 6. RESPONSIVIDAD (Móvil y Tablet) */
+/* ================================================= */
+
+@media (max-width: 950px) {
+    
+    body {
+        padding: 0;
+        text-align: left; 
+    }
+
+    header {
+        max-width: 100%; 
+        border-radius: 0; 
+        margin: 0 0 10px 0; 
+    }
+    
+    .top-bar {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+    }
+    
+    .top-bar nav, 
+    .acciones {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .menu-toggle {
+        display: block;
+        font-size: 1.8em;
+    }
+    
+    .container {
+        flex-direction: column;
+        padding: 10px;
+        max-width: 100%;
+        gap: 10px;
+    }
+
+    .box, .login-box, .register-box, .contact-box, .product-container {
+        flex-direction: column;
+        max-width: 100%;
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    .product-images, .product-details {
+        flex: 1 1 100%;
+    }
+    
+    /* Ajuste en móvil para asegurar que las imágenes de todas las tarjetas no sean demasiado grandes */
+    .card img, 
+    .blog-card img, 
+    .similar-card img {
+        width: 100px; 
+        height: 100px;
+        margin: 0 auto 5px auto;
+    }
+}
